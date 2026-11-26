@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Cheng · Studio</title>
+  <meta name="description" content="Daniel Cheng: CS @ University of Florida. Software engineer, designer, video editor, pianist and connector. Seeking Summer 2027 SWE internships." />
+  <meta name="theme-color" content="#0d0f14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0f14'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%234cc9f0'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ── Transport bar ─────────────────────────────── -->
+  <header class="transport">
+    <a class="brand" href="#top" aria-label="Daniel Cheng, home">
+      <span class="brand-mark">DC</span>
+      <span class="brand-name">Daniel Cheng</span>
+    </a>
+
+    <div class="transport-controls" role="group" aria-label="Session playback">
+      <button id="btn-play" class="tbtn tbtn-play" aria-label="Play session" aria-pressed="false">
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      </button>
+      <button id="btn-stop" class="tbtn" aria-label="Stop and rewind">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+      </button>
+      <div class="lcd" aria-live="off">
+        <span class="lcd-pos" id="lcd-pos">001.1</span>
+        <span class="lcd-date" id="lcd-date">Nov 2026</span>
+        <span class="lcd-bpm">88 BPM</span>
+      </div>
+    </div>
+
+    <div class="status" title="Status">
+      <span class="led" aria-hidden="true"></span>
+      <span id="status-text">Seeking Summer 2027 SWE internships</span>
+    </div>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#session">Session</a>
+      <a href="#tracklist">Tracklist</a>
+      <a href="#keys">Keys</a>
+      <a href="#connect">Connect</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ── Hero ─────────────────────────────────────── -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">CS @ University of Florida · Class of 2028</p>
+        <h1>Daniel Cheng</h1>
+        <p class="lede">
+          I <span class="hl hl-code">build software</span>,
+          <span class="hl hl-visuals">design and edit</span>,
+          <span class="hl hl-music">play keys</span>, and I'm the one who
+          <span class="hl hl-people">gets everyone in the same room</span>.
+        </p>
+        <div class="cta-row">
+          <button class="btn btn-primary" id="hero-play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Play my session
+          </button>
+          <a class="btn" id="hero-resume" href="assets/Daniel_Cheng_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="btn btn-icon" id="hero-github" href="https://github.com/suupreme" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+          </a>
+          <a class="btn btn-icon" id="hero-linkedin" href="https://www.linkedin.com/in/chengus" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <aside class="now-card" aria-label="Now playing">
+        <div class="cover" aria-hidden="true">
+          <div class="cover-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="cover-title">DC</span>
+          <span class="cover-sub">Engineer · Creative · Connector</span>
+        </div>
+        <div class="now-list">
+          <div class="now-row">
+            <span class="now-k">Now</span>
+            <span class="now-v">Rust ML inference engine @ BioVision Lab</span>
+          </div>
+          <div class="now-row">
+            <span class="now-k">Also</span>
+            <span class="now-v">Industry Relations @ SSD · Fundraising @ Gator User Design</span>
+          </div>
+          <div class="now-row now-next">
+            <span class="now-k">Next</span>
+            <span class="now-v">Summer 2027 SWE intern. <a href="#connect">Your team?</a></span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ── Session / arrangement ────────────────────── -->
+    <section class="section" id="session">
+      <div class="section-head">
+        <h2><span class="sec-num">01</span>Session</h2>
+        <p>My timeline as a DAW arrangement. Each row is part of what I do, and each row is also a stem in the beat.
+          Press <kbd>Space</kbd> or ▶ to play, then <b>M</b>ute or <b>S</b>olo tracks to filter the whole page. Click any clip for details.</p>
+      </div>
+
+      <div class="arrangement">
+        <div class="arr-scroll" id="arr-scroll">
+          <div class="arr-grid" id="arr-grid"><!-- rendered by app.js --></div>
+        </div>
+      </div>
+      <div class="session-foot">
+        <div class="now-playing" aria-live="polite"><span class="np-label">On the playhead</span><span id="np-text">Press play</span></div>
+        <button class="linkbtn" id="clear-solo" hidden>Clear mute / solo</button>
+      </div>
+    </section>
+
+    <!-- ── Tracklist ─────────────────────────────────── -->
+    <section class="section" id="tracklist">
+      <div class="section-head">
+        <h2><span class="sec-num">02</span>Tracklist</h2>
+        <p>Featured work. Filter by track, or solo one up in the session.</p>
+      </div>
+      <div class="filters" id="filters" role="toolbar" aria-label="Filter by track"></div>
+      <ol class="tracks" id="tracks"></ol>
+      <p class="empty" id="tracks-empty" hidden>Everything's muted. <button class="linkbtn" data-clear>Unmute all</button></p>
+    </section>
+
+    <!-- ── Levels ─────────────────────────────────────── -->
+    <section class="section" id="levels">
+      <div class="section-head">
+        <h2><span class="sec-num">03</span>Levels</h2>
+        <p>Some numbers I'm proud of.</p>
+      </div>
+      <div class="meters" id="meters"></div>
+      <div class="rack" id="rack" aria-label="Skills"></div>
+    </section>
+
+    <!-- ── Keys ──────────────────────────────────────── -->
+    <section class="section" id="keys">
+      <div class="section-head">
+        <h2><span class="sec-num">04</span>Keys</h2>
+        <p>Piano is where I started, and pop and hip-hop are where I live. Play with your mouse, touch, or
+          keyboard (<kbd>A</kbd>–<kbd>;</kbd> for white keys, <kbd>W</kbd> <kbd>E</kbd> <kbd>T</kbd> <kbd>Y</kbd> <kbd>U</kbd> <kbd>O</kbd> <kbd>P</kbd> for black keys). It names whatever chord you play.</p>
+      </div>
+      <div class="keys-wrap">
+        <div class="chord-display" aria-live="polite">
+          <span class="chord-label">Chord</span>
+          <span class="chord-name" id="chord-name">—</span>
+          <span class="chord-notes" id="chord-notes">Play something</span>
+        </div>
+        <div class="piano-scroll">
+          <div class="piano" id="piano" role="group" aria-label="Piano keyboard"></div>
+        </div>
+        <p class="hint">Try a <b>ii–V–I</b>, or the four chords behind every pop song. There might be a secret.</p>
+      </div>
+    </section>
+
+    <!-- ── Connect ───────────────────────────────────── -->
+    <section class="section" id="connect">
+      <div class="connect">
+        <div>
+          <h2 class="connect-title">Let's open a session.</h2>
+          <p class="connect-lede">I'm looking for <b>Summer 2027 software engineering internships</b>.
+            I'm also always up for a hackathon team, a design collab, a video project, or coffee with someone building cool things.</p>
+        </div>
+        <div class="connect-grid">
+          <a class="conn" id="conn-email" href="mailto:dcheng138@gmail.com">
+            <span class="conn-k">Email</span><span class="conn-v">dcheng138@gmail.com</span>
+          </a>
+          <a class="conn" id="conn-linkedin" href="https://www.linkedin.com/in/chengus" target="_blank" rel="noopener">
+            <span class="conn-k">LinkedIn</span><span class="conn-v">in/chengus</span>
+          </a>
+          <a class="conn" id="conn-github" href="https://github.com/suupreme" target="_blank" rel="noopener">
+            <span class="conn-k">GitHub</span><span class="conn-v">@suupreme</span>
+          </a>
+          <a class="conn" id="conn-resume" href="assets/Daniel_Cheng_Resume.pdf" target="_blank" rel="noopener">
+            <span class="conn-k">Resume</span><span class="conn-v">PDF ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Daniel Cheng</span>
+    <span class="footer-note">Hand-built with HTML, CSS, JS &amp; the Web Audio API. Every sound on this page is synthesized live.</span>
+  </footer>
+
+  <!-- Clip inspector -->
+  <dialog id="inspector" class="inspector" aria-labelledby="insp-title">
+    <form method="dialog" class="insp-close-form">
+      <button class="insp-close" aria-label="Close">×</button>
+    </form>
+    <div class="insp-track" id="insp-track"></div>
+    <h3 id="insp-title"></h3>
+    <p class="insp-meta" id="insp-meta"></p>
+    <p class="insp-summary" id="insp-summary"></p>
+    <ul class="insp-bullets" id="insp-bullets"></ul>
+    <div class="insp-tags" id="insp-tags"></div>
+    <div class="insp-links" id="insp-links"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
